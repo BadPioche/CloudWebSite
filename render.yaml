@@ -6,6 +6,7 @@ services:
     repo: https://github.com/BadPioche/CloudWebSite # optional
     region: frankfurt # optional (defaults to oregon)
     branch: main # optional (defaults to master)
+    plan: free
     envVars:
       - key: DB_URL
         fromDatabase:
