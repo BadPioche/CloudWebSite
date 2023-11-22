@@ -1,11 +1,11 @@
 services:
-  # A Docker web service
   - type: web
     name: CloudWeb
-    runtime: docker
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
     repo: https://github.com/BadPioche/CloudWebSite # optional
     region: frankfurt # optional (defaults to oregon)
-    branch: main # optional (defaults to master)
     plan: free
     envVars:
       - key: DB_URL
@@ -16,5 +16,5 @@ services:
 databases:
   - name: postgredatabase
     databaseName: private
-    ipAllowList: []
-
+    region: frankfurt
+    plan: free
