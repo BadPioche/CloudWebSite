@@ -6,15 +6,14 @@ services:
     repo: https://github.com/BadPioche/CloudWebSite # optional
     region: frankfurt # optional (defaults to oregon)
     branch: main # optional (defaults to master)
-
-databases:
-  - name: postgredatabase
-    databaseName: private
-
-envVarGroups:
-  - name: conc-settings
     envVars:
       - key: DB_URL
         fromDatabase:
           name: private
           property: connectionString
+
+databases:
+  - name: postgredatabase
+    databaseName: private
+    ipAllowList: []
+
